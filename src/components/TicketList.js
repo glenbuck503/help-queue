@@ -19,7 +19,7 @@ function TicketList(props) {
           id={ticket.id}
           key={ticket.id} />
       )}
-      {/* Don't forget to add the curly brace above - otherwise there will be a syntax error. */}
+      
     </React.Fragment>
   );
 }
