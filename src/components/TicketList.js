@@ -8,27 +8,31 @@ import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 
 
 function TicketList(props) {
+
   useFirestoreConnect([
     { collection: 'tickets' }
   ]);
+
   const tickets = useSelector(state => state.firestore.ordered.tickets);
+
+
   if (isLoaded(tickets)) {
     return (
       <React.Fragment>
-        <hr/>
+        <hr />
         {tickets.map((ticket) => {
           return <Ticket
-            whenTicketClicked = { props.onTicketSelection }
+            whenTicketClicked={props.onTicketSelection}
             names={ticket.names}
             location={ticket.location}
             issue={ticket.issue}
             formattedWaitTime={ticket.formattedWaitTime}
             id={ticket.id}
-            key={ticket.id}/>
+            key={ticket.id} />
         })}
       </React.Fragment>
     );
-  
+   
   } else {
     return (
       <React.Fragment>
@@ -37,7 +41,6 @@ function TicketList(props) {
     )
   }
 }
-
 TicketList.propTypes = {
 
   onTicketSelection: PropTypes.func
