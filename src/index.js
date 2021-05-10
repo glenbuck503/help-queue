@@ -9,6 +9,7 @@ import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
 import firebase from "./firebase";
 import 'firebase/auth';
+// import reportWebVitals from './reportWebVitals';
 
 
 const store = createStore(rootReducer);
@@ -30,7 +31,6 @@ ReactDOM.render(
     </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById('root')
-)
-
+);
 
 // reportWebVitals();
